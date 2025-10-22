@@ -1,38 +1,64 @@
-# AI-Log-Analyzer
+# AI Log Analyzer
 
-**AI-Log-Analyzer** — un toolkit minimale ma professionale per l'analisi di log (Apache/nginx + syslog) che combina parsing, anomaly detection con Machine Learning e una dashboard web front-end.
-
-> Architettura: Java (static file server) + Python (analisi ML) + Vanilla JS (visualizzazione).
-> - Java: serve la dashboard statica e l'API che restituisce il JSON dei risultati.
-> - Python: legge i log, esegue parsing, applica un modello di anomaly detection (Isolation Forest) e salva risultati in SQLite / JSON.
-> - JS: visualizza grafici (Chart.js) e riepiloghi AI.
+**AI Log Analyzer** è uno strumento di analisi intelligente dei log basato su *Machine Learning* che rileva automaticamente comportamenti anomali nei file di log di sistema, applicazioni o server.  
+Il progetto utilizza l’algoritmo **Isolation Forest** per identificare outlier e pattern sospetti, aiutando a individuare errori, intrusioni o anomalie di performance.
 
 ---
 
-## Features principali
+##  Dashboard
 
-- Parsing di log HTTP e log di sistema (formati comuni).
-- Rilevamento anomalie non supervisionato con **Isolation Forest** (scikit-learn).
-- Integrazione Java ↔ Python: il server statico/endpoint rimane stabile; Python non modifica l'API.
-- Dashboard vanilla JS con Chart.js per visualizzare conteggi e riepiloghi.
-- Salvataggio risultati in `data/results.db` e `analysis_result.json`.
+La dashboard interattiva mostra:
+- Log grezzi caricati
+- Livelli di severità evidenziati
+- Segnalazioni automatiche di anomalie
+- Grafico dell’andamento temporale
+
+![Dashboard Preview](./dashboard.png)
+> *Assicurati che l'immagine `dashboard.png` si trovi nella root del progetto.*
 
 ---
 
-## Requisiti
+##  Tecnologie utilizzate
 
-- Python 3.10+ (consigliato 3.11+)
-- Java 11+ (JDK)
-- `pip` virtualenv (consigliato)
-- Rete per installare dipendenze initiali
+- **Python 3.x**
+- **Pandas** – analisi e pulizia dei dati
+- **Scikit-learn** – implementazione del modello *IsolationForest*
+- **Matplotlib** – visualizzazione grafica dei risultati
+- **Streamlit** – dashboard interattiva
+- **Joblib** – salvataggio e caricamento del modello AI
 
-Esempio ambiente (Unix):
-```bash
-python3 -m venv venv
-source venv/bin/activate
+---
+
+## Algoritmo: Isolation Forest
+
+L’**Isolation Forest** è un algoritmo di *anomaly detection* che si basa sull’idea che:
+> Gli outlier sono più facili da isolare rispetto ai punti normali.
+
+Funziona costruendo molteplici alberi binari casuali, dove:
+- I **punti normali** richiedono più partizioni per essere isolati.
+- Gli **outlier** vengono isolati rapidamente.
+
+Il punteggio finale (`anomaly_score`) indica quanto un log è anomalo:
+- 🔵 **≈ 0.0** → comportamento normale  
+- 🔴 **≈ 1.0** → forte anomalia  
+
+Questo approccio è molto efficiente anche su grandi dataset.
+
+---
+
+## 🚀 Esecuzione locale
+
+1. **Clona il repository**
+   ```bash
+   git clone https://github.com/DavideIppolito2008/AI-Analyzer-Log.git
+   cd AI-Analyzer-Log
+2 **Crea un ambiente virtuale**
+   ```bash
+  python3 -m venv venv
+  source venv/bin/activate
+  
+
+3 
 pip install -r requirements.txt
-python3 analyzer/log_analyzer.py analyzer/sample_access.log
-javac server/Main.java
-java server.Main
-# apri http://localhost:8080
-# AI-Analyzer-Log
+
+
