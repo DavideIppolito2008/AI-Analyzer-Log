@@ -35,3 +35,4 @@ python3 analyzer/log_analyzer.py analyzer/sample_access.log
 javac server/Main.java
 java server.Main
 # apri http://localhost:8080
+# AI-Analyzer-Log
