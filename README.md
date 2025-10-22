@@ -58,11 +58,13 @@ Questo approccio è:
 Analisi in tempo reale dei log con conteggio errori, warning e criticità, più riepilogo AI con valutazione automatica.
 
 <p align="center">
-  <img src="dashboard.png" alt="AI Log Analyzer Dashboard Preview" width="700"/>
+  <img src="Dashboard.png" alt="AI Log Analyzer Dashboard Preview" width="700"/>
 </p>
 
 ---
 AI-Analyzer-Log/
+##  Repository Structure
+
 ├── analyzer/
 │ ├── log_analyzer.py # Script principale con ML
 │ ├── sample_access.log # Esempio di log
@@ -79,5 +81,4 @@ AI-Analyzer-Log/
 │
 ├── requirements.txt
 └── README.md
-## 📦 Repository Structure
 
