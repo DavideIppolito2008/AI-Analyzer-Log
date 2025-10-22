@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Log Analyzer Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>AI Log Analyzer Dashboard</h1>
+
+  <div id="summary">
+    <p><b>File:</b> <span id="fileName"></span></p>
+    <p><b>Totale log:</b> <span id="total"></span></p>
+    <p><b>Errori:</b> <span id="errors"></span></p>
+    <p><b>Warning:</b> <span id="warnings"></span></p>
+    <p><b>Critici:</b> <span id="criticals"></span></p>
+    <p><b>Data analisi:</b> <span id="timestamp"></span></p>
+    <p><b>AI Summary:</b> <span id="aiSummary"></span></p>
+  </div>
+
+  <canvas id="chart" width="600" height="300"></canvas>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

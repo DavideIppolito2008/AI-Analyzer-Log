@@ -1,0 +1,9 @@
+{
+    "file_name": "sample_access.log",
+    "total_logs": 20,
+    "errors": 1,
+    "warnings": 2,
+    "criticals": 2,
+    "ai_summary": "Trovate 4 anomalie (score medio ML 0.047).",
+    "timestamp": "2025-10-22 13:13:25"
+}
