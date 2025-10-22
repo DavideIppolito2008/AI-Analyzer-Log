@@ -51,6 +51,7 @@ Questo approccio è:
   javac server/Main.java
   java server.Main
   # Apri nel browser → http://localhost:8080
+  ```
 ---
 
 ##  Dashboard Preview
