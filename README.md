@@ -63,8 +63,8 @@ Analisi in tempo reale dei log con conteggio errori, warning e criticità, più 
 </p>
 
 ---
-AI-Analyzer-Log/
 ##  Repository Structure
+```bash
 
 ├── analyzer/
 │ ├── log_analyzer.py # Script principale con ML
@@ -82,4 +82,4 @@ AI-Analyzer-Log/
 │
 ├── requirements.txt
 └── README.md
-
+```
