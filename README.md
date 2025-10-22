@@ -13,8 +13,7 @@ La dashboard interattiva mostra:
 - Segnalazioni automatiche di anomalie
 - Grafico dell’andamento temporale
 
-![Dashboard Preview](./dashboard.png)
-> *Assicurati che l'immagine `dashboard.png` si trovi nella root del progetto.*
+![Dashboard Preview](./Dashboard.png)
 
 ---
 
