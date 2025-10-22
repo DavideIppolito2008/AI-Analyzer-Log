@@ -45,19 +45,6 @@ Questo approccio è molto efficiente anche su grandi dataset.
 
 ---
 
-## 🚀 Esecuzione locale
 
-1. **Clona il repository**
-   ```bash
-   git clone https://github.com/DavideIppolito2008/AI-Analyzer-Log.git
-   cd AI-Analyzer-Log
-2 **Crea un ambiente virtuale**
-   ```bash
-  python3 -m venv venv
-  source venv/bin/activate
-  
-
-3 
-pip install -r requirements.txt
 
 
